@@ -10,14 +10,18 @@ import Modelo.Articulo;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.io.IOException;
 
 public class PanelModifcarArticulo extends PanelArticuloConsulta {
 	protected JButton btnModificar;
 	protected ListaArticulos lista;
 	protected Articulo articuloActual;
 	
-	public PanelModifcarArticulo() {
+	public PanelModifcarArticulo() throws ClassNotFoundException, IOException {
 		super();
+		lista=new ListaArticulos();
 		getTxtPrecio().setEditable(true);
 		btnModificar = new JButton("Modificar");
 		btnModificar.addActionListener(new ActionListener() {
@@ -33,6 +37,16 @@ public class PanelModifcarArticulo extends PanelArticuloConsulta {
 		add(btnModificar, gbc_btnModificar);
 		
 		rellenaCombo();		
+		
+		getComboBox().addItemListener(new ItemListener() {
+
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+//				banderaNuevoElemento = true;
+				rellenaFormularioArticuloConsulta(e.getItem());
+			}
+
+		});
 	}
 	private Articulo rellenaFormularioArticuloConsulta(Object item) {
 		Articulo instancia = (Articulo) item;
