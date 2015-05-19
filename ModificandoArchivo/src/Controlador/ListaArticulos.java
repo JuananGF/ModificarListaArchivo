@@ -28,6 +28,8 @@ public class ListaArticulos {
 
 	// almacena un nuevo articulo
 	public void guardarNuevoArticulo(Articulo articulo) throws FileNotFoundException, IOException {
+		//Si el usuario pasa null como parametro guardaré la lista con los mismos
+//		articulos que ya tiene
 		if (articulo != null) {
 			getListaArt().add(articulo);
 			Collections.sort(getListaArt(), new Comparator<Articulo>() {
