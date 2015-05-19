@@ -14,6 +14,7 @@ import Vista.PanelModifcarArticulo;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class PruebaUIModificarElemento extends JFrame {
 
@@ -39,8 +40,10 @@ public class PruebaUIModificarElemento extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
 	 */
-	public PruebaUIModificarElemento() {
+	public PruebaUIModificarElemento() throws ClassNotFoundException, IOException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new PanelModifcarArticulo();
