@@ -118,6 +118,8 @@ public class PanelArticuloConsulta extends JPanel {
 		gbc_txtDesc.gridx = 4;
 		gbc_txtDesc.gridy = 4;
 		add(txtDesc, gbc_txtDesc);
+		
+		
 	}
 	public JTextField getTxtPrecio() {
 		return txtPrecio;
